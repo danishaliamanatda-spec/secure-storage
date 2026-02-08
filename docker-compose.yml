@@ -19,6 +19,8 @@ services:
     ports:
       - "3006:3006"
     env_file: ./frontend/.env
+    environment:
+      - PORT=3006
     volumes:
       - ./frontend/src:/app/src
     restart: unless-stopped
