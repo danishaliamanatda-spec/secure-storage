@@ -134,8 +134,6 @@ app.post('/api/files/upload-url', auth, async (req, res) => {
 
     const url = await getSignedUrl(s3, new PutObjectCommand({
       Bucket: BUCKET, Key: s3Key, ContentType: fileType,
-      ServerSideEncryption: 'aws:kms',
-      SSEKMSKeyId: process.env.KMS_KEY_ID,
     }), { expiresIn: 300 });
 
     await ddb.send(new PutCommand({
