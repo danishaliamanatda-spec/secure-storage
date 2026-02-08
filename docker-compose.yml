@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3005:3005"
+    env_file: ./backend/.env
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./backend/src:/app/src
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3006:3006"
+    env_file: ./frontend/.env
+    volumes:
+      - ./frontend/src:/app/src
+    restart: unless-stopped
+    depends_on:
+      - backend

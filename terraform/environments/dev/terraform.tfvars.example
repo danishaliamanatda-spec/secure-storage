@@ -1,0 +1,7 @@
+# Copy this file to terraform.tfvars and fill in your values
+# DO NOT commit terraform.tfvars to version control
+
+aws_region          = "eu-west-2"
+app_port            = 3005
+acm_certificate_arn = "" # Add your ACM cert ARN for HTTPS
+alert_email         = "" # Add email for CloudWatch alerts
