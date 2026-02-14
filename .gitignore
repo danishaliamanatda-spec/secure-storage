@@ -12,8 +12,7 @@ override.tf.json
 *_override.tf
 *_override.tf.json
 
-# Environment variables
-.env
+# Environment variables (local overrides only)
 .env.local
 .env.production
 
